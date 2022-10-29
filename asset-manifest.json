@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-canvas-app/static/css/main.cd431741.css",
+    "main.js": "/react-canvas-app/static/js/main.fee61196.js",
+    "index.html": "/react-canvas-app/index.html",
+    "main.cd431741.css.map": "/react-canvas-app/static/css/main.cd431741.css.map",
+    "main.fee61196.js.map": "/react-canvas-app/static/js/main.fee61196.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd431741.css",
+    "static/js/main.fee61196.js"
+  ]
+}
