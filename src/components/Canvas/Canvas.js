@@ -71,7 +71,7 @@ const findThePointOfIntersectionOfTheLines = (currentLine, lastLine) => {
   }
 };
 
-const Canvas = ({ collapseLines, getNotCollapseLines }) => {
+const Canvas = ({ collapseLines, getNotCollapseLines, widthApp }) => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
 
@@ -87,7 +87,7 @@ const Canvas = ({ collapseLines, getNotCollapseLines }) => {
     contextRef.current.beginPath();
     contextRef.current.arc(x, y, 4, 0, 2 * Math.PI);
     contextRef.current.fillStyle = 'red';
-    contextRef.current.strokeStyle = 'black';
+    contextRef.current.strokeStyle = 'white';
     contextRef.current.fill();
     contextRef.current.stroke();
   };
@@ -101,10 +101,32 @@ const Canvas = ({ collapseLines, getNotCollapseLines }) => {
     const context = canvas.getContext('2d');
 
     context.lineCap = 'round';
-    context.strokeStyle = 'black';
-    context.lineWidth = 1;
+    context.strokeStyle = 'white';
+    context.lineWidth = 1.3;
     contextRef.current = context;
   }, []);
+
+  useEffect(() => {
+    if (widthApp) {
+      const canvas = canvasRef.current;
+
+      if (widthApp < 900) {
+        canvas.width = 700;
+      }
+
+      if (widthApp < 800) {
+        canvas.width = 600;
+      }
+
+      if (widthApp < 700) {
+        canvas.width = 500;
+      }
+
+      if (widthApp < 600) {
+        canvas.width = 350;
+      }
+    }
+  }, [widthApp]);
 
   useEffect(() => {
     if (collapseLines) {
