@@ -43,6 +43,11 @@
         background-color: white;
         color: black;
       }
+
+      .button:active {
+        box-shadow: none;
+        font-size: 19.8px;
+      }
     }
   }
 }
